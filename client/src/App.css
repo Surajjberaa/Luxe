@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light mode */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode */
+.dark body {
+  background-color: black;
+  color: white;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  height: 100vh;
+}
+
+
+@font-face {
+  font-family: 'Halimun';
+  src: url('../src/assets/fonts/Halimun.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
