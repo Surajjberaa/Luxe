@@ -1,65 +1,49 @@
-import React, { Suspense, useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Model } from '../3d/CarModel'
-import { Environment, OrbitControls } from '@react-three/drei'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
+
 import { Buggati } from '../3d/Buggati'
-import { exp } from 'three/tsl'
+import { Model } from '../3d/CarModel'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { Particles } from '../components/magicui/particles'
+import {useTheme} from '../contexts/ThemeContext'
+import { BlurFade } from '../components/magicui/blur-fade'
 
 
 
- function Home() {
+gsap.registerPlugin(useGSAP);
 
-    const [intensity, setIntensity] = useState(5.5)
 
+function Home() {
+
+    const { theme } = useTheme(); // ✅ Now reactive!
+    const [color, setColor] = useState("#ffffff");
+  
     useEffect(() => {
-        if(localStorage.getItem('theme') === 'light'){
-            setIntensity(20.5)
-        }else{
-            setIntensity(8.5)
-        }
-    }, [localStorage.getItem('theme')])
+      setColor(theme === "dark" ? "#ffffff" : "#000000");
+    }, [theme]);
 
     return (
-        <div className="dark:bg-gradient-to-r dark:from-gray-700 dark:to-black bg-gradient-to-r from-white to-[#BA7F95]  bg-fixed bg-cover bg-center h-[300vh]">
-            <div className="hero-section flex h-[110vh] items-center justify-center flex-col gap-3 ">
-                <h1 className='text-[2rem] md:text-[15rem] font-extrabold font-[serif] tracking-widest'>
+        <div className="dark:bg-gradient-to-r h-full bg-fixed bg-cover bg-center overflow-hidden">
+            <div className="hero-section flex h-[100vh] items-center justify-center flex-col gap-3 ">
+                <div className='flex items-center justify-center gap-3 flex-col'>
+                    <BlurFade delay={0.25} inView duration={3}>
+
+                <h1 id='luxe' className='luxe text-[6rem] md:text-[15rem] font-extrabold font-[serif] tracking-widest select-none ' >
                     LUXE
                 </h1>
+                    </BlurFade>
                 <div>
-                    <p className='font-[halimun] text-[13px] md:text-xl'>Experience Cars Like Never Before</p>
+                    <p className='font-[halimun] text-[13px] md:text-xl select-none '>Experience Cars Like Never Before</p>
+                </div>
                 </div>
             </div>
-            <div className='hero-car-section flex items-center justify-center gap-3 w-full h-screen'>
-                <div className='hero-car flex items-center justify-center gap-3 flex-col w-full h-full mt-[500px] '>
-                    <h1 className='text-6xl'>EXPERIENCE 3D</h1>
-                    <div className='w-[50%] h-[70%]  rounded-2xl '>
-                        <div className=' flex items-center justify-center gap-3 mt-10 font-[serif]'>
-                        <h1 className='text-4xl'>BMW M5</h1>
-                        </div>
-                    <Canvas camera={{ position: [0, 0, 3] }}>
-                        <Suspense fallback={null}>
-                            <directionalLight intensity={intensity} castShadow={true} />
-                            <Model />
-                            <OrbitControls enablePan={false} enableZoom={false}  />
-                            {/* <Environment preset="studio" environmentIntensity={0.2} /> */}
-                        </Suspense>
-                    </Canvas>
-                    </div>
-                    <div className='w-[50%] h-[70%] rounded-2xl mb-52 '>
-                        <div className=' flex items-center justify-center gap-3 mt-10 font-[serif]'>
-                        <h1 className='text-4xl'>BMW M5</h1>
-                        </div>
-                    <Canvas camera={{ position: [0, 0, 3] } }>
-                        <Suspense fallback={null}>
-                            <directionalLight intensity={intensity} castShadow={true} />
-                            <Buggati />
-                            <OrbitControls enablePan={true} enableZoom={false}   />
-                            {/* <Environment preset="studio" environmentIntensity={0.2}  /> */}
-                        </Suspense>
-                    </Canvas>
-                    </div>
-                </div>
-            </div>
+            <Particles
+        className="absolute inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color={color}
+        refresh
+      />
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import useTheme from '../contexts/ThemeContext';
+import {useTheme} from '../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
 
-    const [theme, toggleTheme] = useTheme();
+    const {theme, toggleTheme} = useTheme();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -16,7 +16,7 @@ function Navbar() {
 
     return (
         <div>
-            <nav className="absolute top-0 z-50 w-full font-[halimun] ">
+            <nav className=" top-0 z-100 w-full font-[halimun] ">
                 <div className=' flex justify-between items-center w-full h-[70px] p-4 text-black dark:text-white '>
                     <div className='nav-left text-2xl'>
                         <Link to='/'>Luxe</Link>
@@ -47,12 +47,12 @@ function Navbar() {
                         </div>
                 </div>
             </nav>
-            <div className={`nav-middle gap-9 md:hidden items-center justify-center text-lg ${isOpen ? 'flex' : 'hidden'} flex-col absolute  top-0 left-0 w-full h-screen bg-transparent backdrop-blur-3xl font-[halimun]`}>
-                        <Link to='/'>Home</Link>
-                        <Link to='/cars'>Cars</Link>
-                        <Link to='/experience'>Experience</Link>
-                        <Link to='/contact'>Contact</Link>
-                        <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
+            <div className={`nav-middle z-100 gap-9 md:hidden items-center justify-center text-lg ${isOpen ? 'flex' : 'hidden'} flex-col absolute  top-0 left-0 w-full h-screen  backdrop-blur-3xl font-[halimun]`}>
+                        <Link onClick={toggleMenu} to='/'>Home</Link>
+                        <Link onClick={toggleMenu} to='/cars'>Cars</Link>
+                        <Link onClick={toggleMenu} to='/experience'>Experience</Link>
+                        <Link onClick={toggleMenu} to='/contact'>Contact</Link>
+                        <button onClick={toggleTheme}  className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
 
                         </div>
         </div>
