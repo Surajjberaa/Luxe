@@ -4,16 +4,14 @@ import { cn } from "../../lib/utils";
  
 export function Cards({imgUrl, gifUrl, title, description, link}) {
 
-    console.log("gif", imgUrl);
+    // console.log("gif", imgUrl);
     const navigate = useNavigate();
 
   return (
     <div className="max-w-xs w-full">
       <div
         className={cn(
-          "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
-          `bg-[./public/videos/buggati-tourbillon.webp] bg-cover bg-[url(${imgUrl})] bg-no-repeat bg-center`,
-          
+          "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800"
         )}
       >
         <div className="text relative z-50">

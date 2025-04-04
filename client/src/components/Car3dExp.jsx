@@ -30,7 +30,7 @@ function Car3dExp({ model, name }) {
             <div className='md:w-[70%] md:h-[50%] w-[100%] h-[100%] rounded-2xl  mb-10 z-10 '>
             <div className=' flex items-center justify-center flex-col gap-3 mt-10 font-[serif] relative '>
               <h1 className='text-4xl '>{name}</h1>
-              <div className=' w-full h-full rounded-2xl   '>
+              <div className=' w-[380px] h-[200px] md:w-[600px] md:h-[400px]  lg:w-[800px] lg:h-[400px] rounded-2xl  '>
                 <Canvas camera={{ position: [0, 0, 3], fov: 50 }} shadows className='rounded-2xl w-[100%] h-[100%]'>
                   <Suspense fallback={null}>
                     <directionalLight intensity={intensity} castShadow={true} position={[5, 5, 5]} shadow-mapSize-width={1024}
