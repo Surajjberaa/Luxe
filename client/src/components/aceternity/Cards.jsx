@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
  
 export function Cards({imgUrl, gifUrl, title, description, link}) {
 
-    console.log("gif", gifUrl);
+    console.log("gif", imgUrl);
     const navigate = useNavigate();
 
   return (
@@ -12,12 +12,8 @@ export function Cards({imgUrl, gifUrl, title, description, link}) {
       <div
         className={cn(
           "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
-          `bg-[url(${imgUrl})] bg-cover`,
-          // Preload hover image by setting it in a pseudo-element
-          `before:bg-[url(${gifUrl})] before:fixed before:inset-0 before:opacity-0 before:z-[-1]`,
-          `hover:bg-[url(${gifUrl})]`,
-          "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50 object-cover",
-          "transition-all duration-500"
+          `bg-[./public/videos/buggati-tourbillon.webp] bg-cover bg-[url(${imgUrl})] bg-no-repeat bg-center`,
+          
         )}
       >
         <div className="text relative z-50">

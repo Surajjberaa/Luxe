@@ -4,15 +4,15 @@ import React from 'react'
 const CarsInfo = [
   {
     title: 'BMW M5',
-    imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743748638/bmw-m5_xjyxcf.jpg',
-    gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743749225/bmw-m5_e4rtca.webp',
+    imgUrl: '/assest/images/bmw-m5.jpg',
+    gifUrl: '/assets/videos/bmw-m5.webp',
     description: 'A powerful, luxurious, high-performance sports sedan.',
     link: '/experience'
   },
   {
     title: 'Buggati Tourbillon',
-    imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743750625/buggatiTourbillon_rfgv5u.webp',
-    gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743750329/buggati-tourbillon_upy7qa.webp',
+    imgUrl: '/assets/images/buggatiTourbillon.webp',
+    gifUrl: '/assets/videos/buggati-tourbillon.webp',
     description: 'Futuristic, ultra-luxurious, high-performance hypercar.',
     link: "/experience"
   },
