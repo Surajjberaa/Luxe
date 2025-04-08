@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Particles } from '../components/magicui/particles'
 import { useTheme } from '../contexts/ThemeContext'
 import { useNavigate, useParams } from 'react-router-dom'
+import { RollsRoyceGhost } from '../3d/RollsRoyceGhost'
 
 function Experience() {
 
@@ -34,6 +35,7 @@ function Experience() {
         <h1 className='md:text-6xl text-3xl' ref={Experience}>EXPERIENCE 3D</h1>
         <Car3dExp model={<Model />} name={"BMW M5"} />
         <Car3dExp model={<Buggati />} name={"Buggati Tourbillion"} />
+        <Car3dExp model={<RollsRoyceGhost />} name={"Rolls Royce Ghost"} />
       </div>
       <Particles
         className="absolute inset-0 z-0"

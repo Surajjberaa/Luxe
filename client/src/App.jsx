@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Cars from './pages/Cars'
 import Experience from './pages/Experience'
 import Contact from './pages/Contact'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { NumberTicker } from './components/magicui/number-ticker'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000); // Adjust the delay as needed
+    }, 3500); // Adjust the delay as needed
 
     return () => clearTimeout(timer);
   }, []);
