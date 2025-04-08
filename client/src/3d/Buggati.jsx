@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 import { GUI } from 'dat.gui'
 
 export function Buggati(props) {
-  const { nodes, materials } = useGLTF('assets/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')
+  const { nodes, materials } = useGLTF('assets/models/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')
 
   const ref = useRef()
 
@@ -7515,4 +7515,4 @@ export function Buggati(props) {
   )
 }
 
-useGLTF.preload('./src/assets/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')
+useGLTF.preload('./src/assets/models/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')

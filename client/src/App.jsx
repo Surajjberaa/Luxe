@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import { use, useEffect, useState } from 'react'
 import { NumberTicker } from './components/magicui/number-ticker'
 import LuxeMoment from './components/LuxeMoment'
+import Studio from './pages/Studio'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/studio/:carId" element={<Studio />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function RollsRoyceGhost(props) {
-  const { nodes, materials } = useGLTF('assets/rolls-royce_ghost/scene.gltf')
+  const { nodes, materials } = useGLTF('assets/models/rolls-royce_ghost/scene.gltf')
   return (
     <group {...props} dispose={null} position={[0,-1,-0.5]} rotation={[0,-1,0]}>
       <group scale={0.01}>
@@ -1951,4 +1951,4 @@ export function RollsRoyceGhost(props) {
   )
 }
 
-useGLTF.preload('assets/rolls-royce_ghost/scene.gltf')
+useGLTF.preload('assets/models/rolls-royce_ghost/scene.gltf')
