@@ -7,10 +7,12 @@ import Experience from './pages/Experience'
 import Contact from './pages/Contact'
 import { use, useEffect, useState } from 'react'
 import { NumberTicker } from './components/magicui/number-ticker'
+import LuxeMoment from './components/LuxeMoment'
 
 function App() {
 
   const [loading, setLoading] = useState(true);
+  const [introComplete, setIntroComplete] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,8 +33,12 @@ function App() {
     );
   }
 
+  
+
   return (
     <>
+     {!introComplete && <LuxeMoment onFinish={() => setIntroComplete(true)} />}
+     {introComplete && 
     <MainLayout>
 
       <Routes>
@@ -43,6 +49,7 @@ function App() {
       </Routes>
 
     </MainLayout>
+    }
     </>
   )
 }
