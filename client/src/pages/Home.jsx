@@ -1,7 +1,5 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 
-import { Buggati } from '../3d/Buggati'
-import { Model } from '../3d/CarModel'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Particles } from '../components/magicui/particles'

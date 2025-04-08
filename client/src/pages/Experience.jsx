@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import { Buggati } from '../3d/Buggati'
-import { Model } from '../3d/CarModel'
+import { BmwM5 } from '../3d/BMW-M5'
 import Car3dExp from '../components/Car3dExp'
 import { useEffect, useRef, useState } from 'react'
 import { Particles } from '../components/magicui/particles'
@@ -33,7 +33,7 @@ function Experience() {
       <div className='hero-car flex items-center  gap-3 flex-col lg:w-[50%] md:w-[70%] w-[100%] h-full mt-[100px]   '>
 
         <h1 className='md:text-6xl text-3xl' ref={Experience}>EXPERIENCE 3D</h1>
-        <Car3dExp model={<Model />} name={"BMW M5"} />
+        <Car3dExp model={<BmwM5 />} name={"BMW M5"} />
         <Car3dExp model={<Buggati />} name={"Buggati Tourbillion"} />
         <Car3dExp model={<RollsRoyceGhost />} name={"Rolls Royce Ghost"} />
       </div>
