@@ -1,12 +1,68 @@
-# React + Vite
+# Luxe – Luxury Car Experience Website 🚘✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [luxe-liard.vercel.app](https://luxe-liard.vercel.app)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Luxe** is a high-end, interactive website built to showcase luxury cars with elegance and immersive design. Featuring real 3D models, smooth GSAP animations, and a vibrant UI, the site delivers a premium, responsive experience that highlights car details and animations with style.
 
-## Expanding the ESLint configuration
+## 🔥 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🚗 **3D Car Models** integrated using **Three.js**
+- 🌗 Light & Dark theme toggle
+- 📱 Fully responsive design
+- 🔄 Smooth animated page transitions
+- 🧊 Glassmorphism and vibrant UI effects
+
+## 🛠️ Built With
+
+- **React.js**
+- **Three.js** – 3D car models and scene rendering
+- **GSAP** – splash animations and transitions
+- **Tailwind CSS** – utility-first styling
+- **React Router** – routing & navigation
+- **Vite** – modern dev build tool
+
+## 📁 Project Structure
+
+```
+/src
+  /assets         # Images, textures, and 3D files
+  /components     # Reusable UI components
+  /pages          # Route-specific views
+  /3d             # Three.js scene, models, and utilities
+  /styles         # Global and Tailwind styles
+  App.jsx
+  main.jsx
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v16+
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/luxe.git
+cd luxe
+npm install
+npm run dev
+```
+
+## 🧩 Upcoming Features
+
+- Redux integration
+- Backend for dynamic car data
+- User login and car wishlist
+
+## 🧑‍💻 Author
+
+**Suraj Bera**  
+*Made with ❤️.*
+
+## 📄 License
+
+MIT License
