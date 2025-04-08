@@ -18,6 +18,14 @@ const CarsInfo = [
     description: 'Futuristic, ultra-luxurious, high-performance hypercar.',
     link: "/experience"
   },
+  {
+    id: 2,
+    title: 'Rolls Royce Ghost',
+    imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1744100311/rolls-royce-_mxztle.jpg',
+    gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1744101004/rollsRoyce_v01kuv.gif',
+    description: 'Elegant, ultra-luxurious, smooth and powerful sedan.',
+    link: "/experience"
+  },
   
 ]
 
