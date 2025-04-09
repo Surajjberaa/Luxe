@@ -1,44 +1,46 @@
+import { RollsRoyceGhost } from "../3d/RollsRoyceGhost";
+import { BmwM5 } from "../3d/BMW-M5";
+import CenterAndGround from "../layouts/CenterAndGround";
 import { useSpring, a } from "@react-spring/three";
-import { useGLTF } from "@react-three/drei";
-import { useEffect, useMemo } from "react";
-import { clone } from "three/examples/jsm/utils/SkeletonUtils";
+import { useEffect, useMemo, useRef } from "react";
+import { Buggati } from "../3d/Buggati";
 
 const modelMap = {
-    bmw: "/assets/models/bmw_m5_cs.glb",
-    buggati: "/assets/models/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf",
-    rollsRoyce: "/assets/models/rolls-royce_ghost/scene.gltf",
-    // add more
+  bmw: BmwM5,
+  buggati: Buggati,
+  rollsRoyce: RollsRoyceGhost,
+  // add more
 };
 
 
 
 const CarModel = ({ id }) => {
-    const modelPath = modelMap[id] || modelMap["bmw"];
-    const { scene } = useGLTF(modelPath);
+  const SelectedModel = modelMap[id] || BmwM5;
 
-    const clonedScene = useMemo(() => clone(scene), [scene]);
-    
-    const [spring, api] = useSpring(() => ({
-        scale: [0, 0, 0],
-        position: [0, -2, 0],
-        rotation: [0, Math.PI * 2, 0],
-      }));
-      
-      useEffect(() => {
-        api.start({
-          scale: [1, 1, 1],
-          position: [0, 0.2, 0.3],
-          rotation: [0, 0, 0],
-          config: { mass: 1, tension: 80, friction: 20 },
-          delay: 300,
-        });
-      }, []);
 
-    return (
-        <a.group {...spring}>
-            <primitive object={clonedScene} scale={0.8} position={[0, -1, 0]} />
-         </a.group>
-    );
+  const [spring, api] = useSpring(() => ({
+    scale: [0, 0, 0],
+    position: [0, -2, 0],
+    rotation: [0, Math.PI * 2, 0],
+  }));
+
+  useEffect(() => {
+    api.start({
+      scale: [1, 1, 1],
+      position: [0.2, 0.2, -0.2],
+      rotation: [0, 1.5, 0],
+      config: { mass: 1, tension: 80, friction: 20 },
+      delay: 300,
+    });
+  }, []);
+
+  return (
+    <a.group {...spring}>
+      <CenterAndGround targetY={-1.05}>
+        <SelectedModel  />
+      </CenterAndGround>
+    </a.group>
+  );
 };
 
 export default CarModel;

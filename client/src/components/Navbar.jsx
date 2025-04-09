@@ -28,6 +28,7 @@ function Navbar() {
                         <Link to='/'>Home</Link>
                         <Link to='/cars'>Cars</Link>
                         <Link to='/experience'>Experience</Link>
+                        <Link to='/studio/bmw'>Studio</Link>
                         <Link to='/contact'>Contact</Link>
                         <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
                     </div>
@@ -51,6 +52,7 @@ function Navbar() {
                         <Link onClick={toggleMenu} to='/'>Home</Link>
                         <Link onClick={toggleMenu} to='/cars'>Cars</Link>
                         <Link onClick={toggleMenu} to='/experience'>Experience</Link>
+                        <Link onClick={toggleMenu} to='/studio/bmw'>Studio</Link>
                         <Link onClick={toggleMenu} to='/contact'>Contact</Link>
                         <button onClick={toggleTheme}  className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
 

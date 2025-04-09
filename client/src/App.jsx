@@ -12,8 +12,8 @@ import Studio from './pages/Studio'
 
 function App() {
 
-  const [loading, setLoading] = useState(false);
-  const [introComplete, setIntroComplete] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [introComplete, setIntroComplete] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

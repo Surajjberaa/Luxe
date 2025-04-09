@@ -4,8 +4,8 @@ import { useGLTF } from '@react-three/drei'
 export function Garage(props) {
   const { nodes, materials } = useGLTF('/assets/models/sci-fi_garage.glb')
   return (
-    <group {...props} dispose={null}>
-      <group name="Sketchfab_Scene">
+    <group {...props} dispose={null} castShadow receiveShadow>
+      <group name="Sketchfab_Scene" castShadow receiveShadow>
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={2.094}>
           <group
             name="54c625915ceb46b09c1c7337b7561aa0fbx"

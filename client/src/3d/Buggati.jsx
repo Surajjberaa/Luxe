@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 import { GUI } from 'dat.gui'
 
 export function Buggati(props) {
-  const { nodes, materials } = useGLTF('assets/models/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')
+  const { nodes, materials } = useGLTF('/assets/models/bugatti_tourbillon_2026__www.vecarz.com/scene.gltf')
 
   const ref = useRef()
 
@@ -20,7 +20,7 @@ export function Buggati(props) {
 //   }, [])
 
   return (
-    <group {...props} dispose={null} position={[0,-1,-0.5]} rotation={[1.6,0,1.2]} ref={ref}>
+    <group {...props} dispose={null} position={[0,-1,-.5]} rotation={[1.58,0,1]} ref={ref}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={90.3}>
         <group scale={0.01}>
           <mesh

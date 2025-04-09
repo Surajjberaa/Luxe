@@ -5,7 +5,7 @@ import { useGLTF } from '@react-three/drei'
 export function BmwM5(props) {
   const { nodes, materials } = useGLTF('/assets/models/bmw_m5_cs.glb')
   return (
-    <group {...props} position={[1,-1,-0.5]} rotation={[0,5,0]} castShadow={true} receiveShadow={true} dispose={null} >
+    <group {...props} position={[1,-1,-1]} rotation={[0,5.25,0]} castShadow={true} receiveShadow={true} dispose={null} >
       <group position={[-0.068, 0.169, 0.984]} rotation={[1.57, 0, Math.PI]} scale={0.3}>
         <mesh
           castShadow
