@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
       setTheme(localTheme);
       document.documentElement.classList.add(localTheme);
     } else {
-      document.documentElement.classList.add('light');
+      document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     }
   }, []);
