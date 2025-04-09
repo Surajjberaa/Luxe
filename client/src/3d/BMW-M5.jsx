@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
 
 export function BmwM5(props) {
   const { nodes, materials } = useGLTF('/assets/models/bmw_m5_cs.glb')
