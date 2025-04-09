@@ -46,9 +46,9 @@ function Car3dExp({ model, name }) {
           <Canvas camera={{ position: [0, 0, 3], fov: 50 }} shadows className='rounded-2xl w-[100%] h-[100%]'>
             <Suspense fallback={null}>
               <directionalLight intensity={intensity} castShadow={true} position={[5, 5, 5]} shadow-mapSize-width={1024}
-                shadow-mapSize-height={1024} />
+                shadow-mapSize-height={1024} shadow-bias={-0.0005} />
               <directionalLight intensity={intensity} castShadow={true} position={[5, 5, 0]} shadow-mapSize-width={1024}
-                shadow-mapSize-height={1024} />
+                shadow-mapSize-height={1024} shadow-bias={-0.0005} />
               {model}
               <GroundPlane />
               <OrbitControls enablePan={false} enableZoom={false} />
