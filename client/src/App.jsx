@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/MainLayout'
@@ -52,6 +53,7 @@ function App() {
 
     </MainLayout>
     }
+    <Analytics />
     </>
   )
 }
