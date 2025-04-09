@@ -1,16 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, MeshReflectorMaterial, useHelper } from "@react-three/drei";
+import { OrbitControls, Environment, MeshReflectorMaterial, useHelper, useDetectGPU } from "@react-three/drei";
 import CarModel from "../components/CarModel";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { SpotLightHelper } from "three";
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import Car3dStage from "../components/Car3dStage";
 import { Garage } from "../3d/Garage";
+import StudioLoader from "../components/studio/StudioLoader";
 
 const Studio = () => {
   const { carId } = useParams();
   const navigate = useNavigate();
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  
+const gpuTier = useDetectGPU()
+const isLowEnd = gpuTier?.tier <= 2
 
   const handleDialogOpen = () => {
     setDialogOpen(!dialogOpen);
@@ -24,9 +30,22 @@ const Studio = () => {
     <div className="relative w-screen h-screen bg-black overflow-hidden">
       {/* Canvas Section */}
       <Canvas key={carId} shadows camera={{ position: [5, 2, 2.3], fov: 50 }}  gl={{ powerPreference: "high-performance" }}>
+        <Suspense fallback={<StudioLoader />}>
         <CarModel id={carId} />
         <Car3dStage carId={carId} />
         <Garage />
+        </Suspense>
+
+        {
+          !isLowEnd && (
+            <EffectComposer resolutionScale={0.7}>
+    <Bloom
+      intensity={0.2} // lower = subtle glow, higher = stronger
+      luminanceThreshold={0.8} // only bloom bright parts
+      luminanceSmoothing={0.5} // soft glow transition
+      />
+  </EffectComposer>
+    )}
       </Canvas>
 
       {/* UI Overlay */}
