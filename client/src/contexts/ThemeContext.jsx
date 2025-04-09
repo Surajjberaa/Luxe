@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const localTheme = localStorage.getItem('theme');
@@ -12,7 +12,7 @@ export const ThemeProvider = ({ children }) => {
       document.documentElement.classList.add(localTheme);
     } else {
       document.documentElement.classList.add('light');
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
