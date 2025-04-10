@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { DirectionalLightHelper, DoubleSide, PointLightHelper, SpotLightHelper } from "three";
 import CarModel from "./CarModel";
 
-export default function Car3dStage({ carId }) {
+export default function Car3dStage({ carId, orbitRef }) {
   const spotRef = useRef();
   const dirRef1 = useRef();
   const dirRef2 = useRef();
@@ -60,14 +60,14 @@ export default function Car3dStage({ carId }) {
         shadow-bias={-0.0005}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
-        // shadow-mapSize-width={2048}
-        // shadow-mapSize-height={2048}
-        // shadow-camera-near={1}
-        // shadow-camera-far={50}
-        // shadow-camera-left={-10}
-        // shadow-camera-right={10}
-        // shadow-camera-top={10}
-        // shadow-camera-bottom={-10}
+      // shadow-mapSize-width={2048}
+      // shadow-mapSize-height={2048}
+      // shadow-camera-near={1}
+      // shadow-camera-far={50}
+      // shadow-camera-left={-10}
+      // shadow-camera-right={10}
+      // shadow-camera-top={10}
+      // shadow-camera-bottom={-10}
       />
       <directionalLight
         // ref={dirRef2}
@@ -79,7 +79,7 @@ export default function Car3dStage({ carId }) {
         shadow-mapSize-height={1024}
       />
 
-      <OrbitControls enablePan={false} enableZoom={false}  minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 2} />
+      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 2} ref={orbitRef} />
       {/* <Environment preset="city" /> */}
     </>
   );

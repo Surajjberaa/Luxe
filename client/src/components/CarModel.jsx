@@ -4,6 +4,8 @@ import CenterAndGround from "../layouts/CenterAndGround";
 import { useSpring, a } from "@react-spring/three";
 import { useEffect, useMemo, useRef } from "react";
 import { Buggati } from "../3d/Buggati";
+import { useHelper } from "@react-three/drei";
+import { DirectionalLightHelper, PointLightHelper, SpotLightHelper } from "three";
 
 const modelMap = {
   bmw: BmwM5,
@@ -14,9 +16,12 @@ const modelMap = {
 
 
 
-const CarModel = ({ id }) => {
+const CarModel = ({ id, isInside }) => {
   const SelectedModel = modelMap[id] || BmwM5;
 
+  const pointLightRef = useRef();
+
+  // useHelper(pointLightRef, PointLightHelper , 1, 'red');
 
   const [spring, api] = useSpring(() => ({
     scale: [0, 0, 0],
@@ -37,7 +42,27 @@ const CarModel = ({ id }) => {
   return (
     <a.group {...spring}>
       <CenterAndGround targetY={-1.05}>
-        <SelectedModel  />
+        <SelectedModel />
+        {isInside && (
+          <>
+            <pointLight
+              position={[.2, 0.2, -.6]}
+              intensity={1}
+              distance={3}
+              decay={2}
+              color="white"
+              shadow-bias={-0.0005}
+              castShadow
+            />
+            {/* <mesh position={[.2, 0.2, -.6]}>
+              <sphereGeometry args={[0.05, 16, 16]} />
+              <meshBasicMaterial color="hotpink" />
+            </mesh> */}
+            <ambientLight intensity={0.5} />
+          </>
+
+        )}
+
       </CenterAndGround>
     </a.group>
   );
