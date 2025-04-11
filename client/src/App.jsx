@@ -10,11 +10,13 @@ import { use, useEffect, useState } from 'react'
 import { NumberTicker } from './components/magicui/number-ticker'
 import LuxeMoment from './components/LuxeMoment'
 import Studio from './pages/Studio'
+import LuxeVideo from "./components/LuxeIntroVideo"
 
 function App() {
 
   const [loading, setLoading] = useState(true);
   const [introComplete, setIntroComplete] = useState(false);
+  const [videoIntro, setVideoIntroComplete] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,8 +41,8 @@ function App() {
 
   return (
     <>
-     {!introComplete && <LuxeMoment onFinish={() => setIntroComplete(true)} />}
-     {introComplete && 
+     {!videoIntro ? <LuxeVideo onFinish={() => setVideoIntroComplete(true)} /> : !introComplete && <LuxeMoment onFinish={() => setIntroComplete(true)} />}
+     { introComplete && 
     <MainLayout>
 
       <Routes>
