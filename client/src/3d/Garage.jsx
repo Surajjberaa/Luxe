@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Garage(props) {
-  const { nodes, materials } = useGLTF('/assets/models/sci-fi_garage.glb')
+  const { nodes, materials } = useGLTF('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/sci-fi_garage.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL3NjaS1maV9nYXJhZ2UuZ2xiIiwiaWF0IjoxNzQ0Mzc2MzAzLCJleHAiOjIwNTk3MzYzMDN9.gGrTs5DfHKfsGUr_bMrcAIw1Io35aiZZvz2HZdU8yAg')
   return (
     <group {...props} dispose={null} castShadow receiveShadow>
       <group name="Sketchfab_Scene" castShadow receiveShadow>
@@ -113,4 +113,4 @@ export function Garage(props) {
   )
 }
 
-useGLTF.preload('/sci-fi_garage.glb')
+useGLTF.preload('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/sci-fi_garage.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL3NjaS1maV9nYXJhZ2UuZ2xiIiwiaWF0IjoxNzQ0Mzc2MzAzLCJleHAiOjIwNTk3MzYzMDN9.gGrTs5DfHKfsGUr_bMrcAIw1Io35aiZZvz2HZdU8yAg')
