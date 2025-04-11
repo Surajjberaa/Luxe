@@ -2,15 +2,7 @@ import { Html, useProgress } from '@react-three/drei';
 import { useEffect } from 'react';
 
 const StudioLoader = () => {
-  const { progress } = useProgress();
-
-  useEffect(() => {
-    const minDelay = setTimeout(() => {
-      setShowContent(true);
-    }, 2000); // 🕒 Minimum 2 seconds (you can tweak to 1000–3000)
-
-    return () => clearTimeout(minDelay);
-  }, []);
+  const { progress } = useProgress()
 
   return (
     <Html fullscreen>

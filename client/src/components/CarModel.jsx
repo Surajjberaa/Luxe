@@ -2,10 +2,11 @@ import { RollsRoyceGhost } from "../3d/RollsRoyceGhost";
 import { BmwM5 } from "../3d/BMW-M5";
 import CenterAndGround from "../layouts/CenterAndGround";
 import { useSpring, a } from "@react-spring/three";
-import { useEffect, useMemo, useRef } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef } from "react";
 import { Buggati } from "../3d/Buggati";
 import { useHelper } from "@react-three/drei";
 import { DirectionalLightHelper, PointLightHelper, SpotLightHelper } from "three";
+
 
 const modelMap = {
   bmw: BmwM5,
@@ -42,7 +43,7 @@ const CarModel = ({ id, isInside }) => {
   return (
     <a.group {...spring}>
       <CenterAndGround targetY={-1.05}>
-        <SelectedModel />
+        <Suspense fallback={null}><SelectedModel /></Suspense>
         {isInside && (
           <>
             <pointLight

@@ -17,6 +17,7 @@ const Studio = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isInside, setIsInside] = useState(false);
   const [isInterior, setIsInterior] = useState(true);
+  const [showLoader, setShowLoader] = useState(true);
 
   const interiorCars = ['rollsRoyce'];
   const isInteriorCar = interiorCars.includes(carId);
@@ -28,6 +29,7 @@ const Studio = () => {
       setIsInterior(false);
     }
   }, [carId]);
+
 
 
   const orbitRef = useRef();
@@ -44,6 +46,7 @@ const Studio = () => {
   const navigateHandler = (car) => () => {
     navigate(`/studio/${car}`);
   }
+
   const goInsideCar = () => {
     // console.log(cameraRef.current.position);
     gsap.to(cameraRef.current.position, {
@@ -85,12 +88,32 @@ const Studio = () => {
     setIsInside(false);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+      console.log("Loader finished");
+    }, 2000); // Force 1.5s minimum loader
+
+    return () => clearTimeout(timer);
+  }, [carId]);
+
+  if (showLoader) {
+    return (
+      <div className="relative w-screen h-screen bg-black overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black">
+          <Canvas camera={{ position: [5, 2, 2.3], fov: 50 }} >
+            <StudioLoader />
+          </Canvas>
+        </div>
+      </div>)
+  }
+
 
 
   return (
     <div className="relative w-screen h-screen bg-black overflow-hidden">
       {/* Canvas Section */}
-      <Canvas key={carId} shadows camera={{ position: [5, 2, 2.3], fov: 50 }} gl={{ powerPreference: "high-performance" }} onCreated={({ camera }) => {
+      <Canvas key={carId} shadows camera={{ position: [5, 2, 2.3], fov: 50 }} dpr={[1, 1.5]} gl={{ powerPreference: "high-performance" }} onCreated={({ camera }) => {
         cameraRef.current = camera;
       }}>
         <Suspense fallback={<StudioLoader />}>

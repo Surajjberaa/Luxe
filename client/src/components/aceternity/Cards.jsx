@@ -1,10 +1,12 @@
 "use client";
 import { useNavigate } from "react-router-dom";
 import { cn } from "../../lib/utils";
+import { useState } from "react";
  
 export function Cards({imgUrl, gifUrl, title, description, link, props}) {
 
     // console.log("gif", imgUrl);
+    const [loaded, setLoaded] = useState(false);
     const navigate = useNavigate();
 
     // console.log("img", imgUrl);
@@ -18,14 +20,15 @@ export function Cards({imgUrl, gifUrl, title, description, link, props}) {
   )}  
         
       >
-       <img src={`${imgUrl}`} alt="" className="absolute h-full w-full object-cover group-hover:opacity-0 transition-all duration-500 ease-in-out"  /> 
+       <img src={`${imgUrl}`} alt="" className={`absolute h-full w-full object-cover group-hover:opacity-0 transition-all duration-500 ease-in-out  ${loaded ? "opacity-100 blur-0 scale-100" : "opacity-0 blur-md scale-105"}`}  onLoad={( ) => setLoaded(true)}/> 
        <img
         src={`${gifUrl}`} 
         autoPlay
         loop
+        onLoad={() => setLoaded(true)}
         // muted
-        className="absolute h-full w-full object-cover group-hover:opacity-100 opacity-0 transition-all duration-500 ease-in-out"
-        // style={{ display: "none" }}
+        className={`absolute h-full w-full object-cover group-hover:opacity-100 opacity-0 transition-all duration-500 ease-in-out 
+        `}
       />
         <div className="text relative z-50 p-2 h-full w-full flex flex-col justify-end ">
           <h1 className="font-bold text-xl md:text-3xl text-gray-50 absolute top-0 py-4 ">

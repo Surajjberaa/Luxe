@@ -35,11 +35,11 @@ function Cars() {
       <div className='font-[serif] text-4xl'>Explore Cars</div>
       <div>
 
-        <div className='md:grid md:grid-cols-4 flex flex-col  gap-4 px-4 py-4'>
+        <div className='sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 flex flex-col  gap-4 px-4 py-4'>
 
           {
             CarsInfo.map((car) => (
-              <div className=' w-full h-full flex justify-center items-center' key={car.id}>
+              <div className=' w-full h-full flex justify-center items-center' key={car.title}>
                 <Cards  title={car.title} imgUrl={car.imgUrl} gifUrl={car.gifUrl} description={car.description} link={car.link}/>
               </div>
             ))
