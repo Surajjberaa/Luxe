@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 export function BmwM5(props) {
-  const { nodes, materials } = useGLTF('/assets/models/bmw_m5_cs.glb')
+  const { nodes, materials } = useGLTF('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/BmwM5C.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL0Jtd001Qy5nbGIiLCJpYXQiOjE3NDQzNzYwMzgsImV4cCI6MjA1OTczNjAzOH0.-Ux6IVlA3r77P_D5Ortb0QYxieo-u-W-Jzjsq2YOnWA')
   return (
     <group {...props} position={[1,-1,-1]} rotation={[0,5.25,0]} castShadow={true} receiveShadow={true} dispose={null} >
       <group position={[-0.068, 0.169, 0.984]} rotation={[1.57, 0, Math.PI]} scale={0.3}>
@@ -658,4 +658,4 @@ export function BmwM5(props) {
 }
 
 
-useGLTF.preload('./src/assets/models/bmw_m5_cs.glb')
+useGLTF.preload('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/BmwM5C.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL0Jtd001Qy5nbGIiLCJpYXQiOjE3NDQzNzYwMzgsImV4cCI6MjA1OTczNjAzOH0.-Ux6IVlA3r77P_D5Ortb0QYxieo-u-W-Jzjsq2YOnWA')
