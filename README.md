@@ -29,6 +29,9 @@
 /src
   /assets         # Images, textures, and 3D files
   /components     # Reusable UI components
+  /layouts        # Layouts components
+  /contexts       # State managements contexts
+  /utility        # Utility functions
   /pages          # Route-specific views
   /3d             # Three.js scene, models, and utilities
   /styles         # Global and Tailwind styles
