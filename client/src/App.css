@@ -13,11 +13,15 @@ body {
 .dark body {
   background-color: black;
   color: white;
+  
 }
 
 html, body {
   scroll-behavior: smooth;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -141,4 +145,22 @@ html, body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+#card-1 .cardInner{
+  background-color: #EEEEEE;
+  color: black;
+}
+
+#card-2 .cardInner{
+  background-color: #000000;
+}
+
+#card-3 .cardInner{
+  background-color: #EEEEEE;
+  color: black;
+}
+
+#card-4 .cardInner{
+  background-color: #000000;
 }
