@@ -9,7 +9,7 @@ export default function LuxeVideo({ onFinish }) {
       <>
           <video
             ref={introRef}
-            src="https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/videos/CarHeadlight.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3MvQ2FySGVhZGxpZ2h0Lm1wNCIsImlhdCI6MTc0NDQwODM5NSwiZXhwIjoyMDU5NzY4Mzk1fQ.4wv90Z4Q2WTX2YX2uXEGGr0cEMoCkg8o0x8jwPRQx9Y"
+            src="https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/videos/CarIntroVideo%20(1).mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3MvQ2FySW50cm9WaWRlbyAoMSkubXA0IiwiaWF0IjoxNzQ0NjExNzI3LCJleHAiOjIwNTk5NzE3Mjd9.hlAVXkSzvRr0JCnPY09V-zNEByMz1gxEDQvkUkbzbkI"
             autoPlay
             muted
             playsInline
