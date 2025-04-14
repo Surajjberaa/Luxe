@@ -17,6 +17,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [introComplete, setIntroComplete] = useState(false);
   const [videoIntro, setVideoIntroComplete] = useState(false);
+  // const [introComplete, setIntroComplete] = useState(true);
+  // const [videoIntro, setVideoIntroComplete] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -1,47 +1,36 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react'
+import gsap from "gsap"
+import BentoSection from "../components/home/BentoSection"
+import HeroSection from "../components/home/HeroSection"
+import { ScrollTrigger } from "gsap/all";
 
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { Particles } from '../components/magicui/particles'
-import { useTheme } from '../contexts/ThemeContext'
-import { BlurFade } from '../components/magicui/blur-fade'
-
-
-
-gsap.registerPlugin(useGSAP);
 
 
 function Home() {
+    
+//     gsap.registerPlugin(ScrollTrigger);    
 
-    const { theme } = useTheme(); // ✅ Now reactive!
-    const [color, setColor] = useState("#ffffff");
+//    let tween =  gsap.to('.hero-image', {
+//         y:200  ,
+//         opacity: 0,
+//         ease: "power2.inOut"
+//     }),
+//     st = ScrollTrigger.create({
+//         trigger: ".body",
+//         start: "top top",
+//         scrub: true,
+//         end: "500 bottom",
+//         animation: tween,
+//         markers: true
+//       });
 
-    useEffect(() => {
-        setColor(theme === "dark" ? "#ffffff" : "#000000");
-    }, [theme]);
+//       st.animation
+      
 
     return (
-        <div className="dark:bg-gradient-to-r h-full bg-fixed bg-cover bg-center overflow-hidden">
-            <div className="hero-section flex h-[100vh] items-center justify-center flex-col gap-3 ">
-                <div className='flex items-center justify-center gap-3 flex-col'>
-                    <BlurFade delay={1} inView duration={4} className={'flex items-center justify-center gap-3 flex-col'}>
-
-                        <h1 id='luxe' className='luxe text-[6rem] md:text-[15rem] font-extrabold font-[serif] tracking-widest select-none ' >
-                            LUXE
-                        </h1>
-                        <div className='flex items-center justify-center gap-3 flex-col'>
-                            <p className='font-[halimun] text-[13px] md:text-xl select-none '>Experience Cars Like Never Before</p>
-                        </div>
-                    </BlurFade>
-                </div>
-            </div>
-            <Particles
-                className="absolute inset-0 z-0"
-                quantity={100}
-                ease={80}
-                color={color}
-                refresh
-            />
+        <div className="dark:bg-gradient-to-r h-full bg-fixed bg-cover bg-center overflow-hidden bg-[url()] home">
+            {/* <img className="absolute top-0 -z-99 blur-md object-cover h-[100vh] w-full hero-image" src="https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/images/bg-img.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvYmctaW1nLmpwZyIsImlhdCI6MTc0NDYyMjE2OSwiZXhwIjoyMDU5OTgyMTY5fQ.MZlDqbUN04kcN-WmBPe6YKCqr-VMwyeeWPNVuerbefw" /> */}
+            <HeroSection />
+            <BentoSection />
         </div>
     )
 }

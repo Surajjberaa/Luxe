@@ -8,7 +8,7 @@ const CarsInfo = [
     imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743748638/bmw-m5_xjyxcf.jpg',
     gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743749225/bmw-m5_e4rtca.webp',
     description: 'A powerful, luxurious, high-performance sports sedan.',
-    link: '/experience'
+    link: '/studio/bmw'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const CarsInfo = [
     imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743750625/buggatiTourbillon_rfgv5u.webp',
     gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1743750329/buggati-tourbillon_upy7qa.webp',
     description: 'Futuristic, ultra-luxurious, high-performance hypercar.',
-    link: "/experience"
+    link: "/studio/buggati"
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const CarsInfo = [
     imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1744100311/rolls-royce-_mxztle.jpg',
     gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1744101004/rollsRoyce_v01kuv.gif',
     description: 'Elegant, ultra-luxurious, smooth and powerful sedan.',
-    link: "/experience"
+    link: "/studio/rollsRoyce"
   },
   
 ]
