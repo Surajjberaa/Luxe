@@ -42,7 +42,7 @@ function CardStackSection() {
 
         ScrollTrigger.create({
             trigger: cards[1],
-            start: 'top 35%',
+            start: 'top 15%',
             endTrigger: cards[cards.length],
             end: 'top 65%',
             pin: '.intro',
@@ -58,7 +58,7 @@ function CardStackSection() {
             if(!isLastCard){
                 ScrollTrigger.create({
                     trigger: card,
-                    start: 'top 35%',
+                    start: 'top 15%',
                     endTrigger: '.outro',
                     end: 'top 65%',
                     pin: true,
@@ -70,7 +70,7 @@ function CardStackSection() {
                     ease: 'none',
                     scrollTrigger: {
                         trigger: card,
-                        start: 'top 35%',
+                        start: 'top 15%',
                         endTrigger: '.outro',
                         end: 'top 65%',
                         scrub: true,

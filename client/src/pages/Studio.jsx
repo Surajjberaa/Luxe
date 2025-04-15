@@ -19,7 +19,7 @@ const Studio = () => {
   const [isInterior, setIsInterior] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
 
-  const interiorCars = ['rollsRoyce'];
+  const interiorCars = ['rollsRoyce', 'porsche911'];
   const isInteriorCar = interiorCars.includes(carId);
 
   useEffect(() => {
@@ -205,6 +205,9 @@ const Studio = () => {
                 </button>
                 <button className={`cursor-pointer text-xl border rounded-full bg-black/50 hover:bg-black/80 p-2`} onClick={navigateHandler("rollsRoyce")}>
                   Rolls Royce
+                </button>
+                <button className={`cursor-pointer text-xl border rounded-full bg-black/50 hover:bg-black/80 p-2`} onClick={navigateHandler("porsche911")}>
+                  Porsche 911 Turbo
                 </button>
               </div>
             </div>

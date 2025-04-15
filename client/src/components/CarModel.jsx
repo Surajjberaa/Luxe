@@ -6,12 +6,14 @@ import { lazy, Suspense, useEffect, useMemo, useRef } from "react";
 import { Buggati } from "../3d/Buggati";
 import { useHelper } from "@react-three/drei";
 import { DirectionalLightHelper, PointLightHelper, SpotLightHelper } from "three";
+import { Porsche911 } from "../3d/Porsche911TurboS";
 
 
 const modelMap = {
   bmw: BmwM5,
   buggati: Buggati,
   rollsRoyce: RollsRoyceGhost,
+  porsche911: Porsche911,
   // add more
 };
 

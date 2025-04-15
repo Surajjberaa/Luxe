@@ -22,6 +22,7 @@ function HeroSection() {
 
   return (
     <>
+    {/* <img className="absolute top-0 -z-99 blur-xl object-cover h-[100vh] w-full hero-image" src="https://res.cloudinary.com/dggyfyynb/image/upload/v1744709479/carBg_tarc3b.jpg" /> */}
     <div className="hero-section flex h-[100vh] items-center justify-center flex-col gap-3 ">
                 <div className='flex items-center justify-center gap-3 flex-col'>
                     <BlurFade delay={1} inView duration={4} className={'flex items-center justify-center gap-3 flex-col'}>
