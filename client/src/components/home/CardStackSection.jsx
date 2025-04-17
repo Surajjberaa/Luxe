@@ -79,6 +79,7 @@ gsap.registerPlugin(ScrollTrigger)
 function CardStackSection() {
 
     const containerRef = useRef()
+    const heroRef = useRef()
 
     useGSAP(() => {
         const cards = gsap.utils.toArray('.pinCards');
@@ -133,6 +134,15 @@ function CardStackSection() {
 
     }, { scope: containerRef })
 
+    useGSAP(() => {
+        gsap.from('.heroText', { opacity: 0, y: 100, duration: 2, delay: 0.5,
+            scrollTrigger: {
+                trigger: ".heroText",
+                scrub: true
+            }
+        })
+    }, {scope: heroRef})
+
     return (
         <div className='app ' ref={containerRef}>
             <section className='hero w-[100vw] md:h-[100vh] h-[30vh]  relative overflow-hidden'>
@@ -145,8 +155,8 @@ function CardStackSection() {
                 
             </section>
             
-            <section className='intro w-[100vw] md:h-[100vh] h-[100vh] relative p-[2em] flex items-center justify-end text-center '>
-                <h1 className='mb-0 md:text-[4rem] text-[1rem] font-[halimun] select-none'>Masterpiece experience for car enthusiasts that brings joy and leave lasting impressions.</h1>
+            <section className='intro w-[100vw] md:h-[100vh] h-[100vh] relative p-[2em] flex items-center justify-end text-center ' ref={heroRef}>
+                <h1 className='heroText mb-0 md:text-[4rem] text-[1rem] font-[halimun] select-none' >Masterpiece experience for car enthusiasts that brings joy and leave lasting impressions.</h1>
             </section>
             <section className='cards font-[serif]'>
                 {
