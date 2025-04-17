@@ -3,6 +3,7 @@ import PinCards from './PinCards';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
+import { HeroMarquee } from './HeroMarquee';
 
 const carsShowcase = [
     {
@@ -133,12 +134,19 @@ function CardStackSection() {
     }, { scope: containerRef })
 
     return (
-        <div className='app hidden md:block' ref={containerRef}>
-            <section className='hero w-[100vw] h-[100vh] relative overflow-hidden'>
+        <div className='app ' ref={containerRef}>
+            <section className='hero w-[100vw] md:h-[100vh] h-[30vh]  relative overflow-hidden'>
+                {/* <h1 className='z-10 absolute text-8xl font-[halimun] top-50'>Elegance</h1> */}
+                <div className='z-10 absolute w-full h-full lg:top-30 md:top-10 top-0 font-[halimun] '>
+
+                <HeroMarquee />
+                </div>
                 <img src="https://res.cloudinary.com/dggyfyynb/image/upload/v1744616967/MercedesSideView1_s1seba.jpg" alt="" />
+                
             </section>
-            <section className='intro w-[100vw] h-[100vh] relative p-[2em] flex items-center justify-end text-center '>
-                <h1 className='mb-0 text-[4rem] font-[halimun]'>Creating masterpiece experiences for car enthusiasts that brings joy and leave lasting impressions.</h1>
+            
+            <section className='intro w-[100vw] md:h-[100vh] h-[100vh] relative p-[2em] flex items-center justify-end text-center '>
+                <h1 className='mb-0 md:text-[4rem] text-[1rem] font-[halimun] select-none'>Masterpiece experience for car enthusiasts that brings joy and leave lasting impressions.</h1>
             </section>
             <section className='cards font-[serif]'>
                 {
@@ -148,7 +156,7 @@ function CardStackSection() {
                 }
             </section>
             <section className='outro w-[100vw] h-[100vh] relative p-[2em]  flex items-center justify-end text-center '>
-                <h1 className='mb-0 text-[4rem] font-[halimun] p-[100px]'>Let's build an experience that leaves a mark.</h1>
+                <h1 className='mb-0 md:text-[4rem] text-[1rem] font-[halimun] p-[100px] select-none'>An experience that leaves a mark.</h1>
             </section>
         </div>
     )

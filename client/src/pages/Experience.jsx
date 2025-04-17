@@ -29,7 +29,12 @@ function Experience() {
   console.log(window.location.pathname);
 
   return (
-    <div className='hero-car-section flex items-start justify-center gap-3 w-full h-full relative overflow-hidden '>
+    <>
+    <div className='flex justify-center items-center w-screen h-screen'>
+      <h1 className='md:text-7xl text-xl font-[halimun]'>Coming Sooon.........</h1>
+    </div>
+
+    {/* <div className='hero-car-section flex items-start justify-center gap-3 w-full h-full relative overflow-hidden hidden'>
       <div className='hero-car flex items-center  gap-3 flex-col lg:w-[50%] md:w-[70%] w-[100%] h-full mt-[100px]   '>
 
         <h1 className='md:text-6xl text-3xl' ref={Experience}>EXPERIENCE 3D</h1>
@@ -43,8 +48,9 @@ function Experience() {
         ease={80}
         color={color}
         refresh
-      />
-    </div>
+        />
+    </div> */}
+        </>
   )
 }
 
