@@ -23,7 +23,7 @@ function Home() {
             scrollTrigger: {
                 start: '108% top',
                 end: 'bottom bottom',
-                markers: true,
+                // markers: true,
                 scrub: true
                 
             }
