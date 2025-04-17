@@ -7,6 +7,7 @@ import { Buggati } from "../3d/Buggati";
 import { useHelper } from "@react-three/drei";
 import { DirectionalLightHelper, PointLightHelper, SpotLightHelper } from "three";
 import { Porsche911 } from "../3d/Porsche911TurboS";
+import { LamboHuracanEvo } from "../3d/LamborghiniHuracanEvo";
 
 
 const modelMap = {
@@ -14,6 +15,7 @@ const modelMap = {
   buggati: Buggati,
   rollsRoyce: RollsRoyceGhost,
   porsche911: Porsche911,
+  lamboHuracan: LamboHuracanEvo
   // add more
 };
 

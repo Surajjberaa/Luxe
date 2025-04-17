@@ -14,14 +14,14 @@ import LuxeVideo from "./components/LuxeIntroVideo"
 
 function App() {
 
-  // const [introComplete, setIntroComplete] = useState(false);
-  // const [videoIntro, setVideoIntroComplete] = useState(false);
-  // const [loading, setLoading] = useState(true);
+  const [introComplete, setIntroComplete] = useState(false);
+  const [videoIntro, setVideoIntroComplete] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Uncomment below line while development and comment above lines
-  const [loading, setLoading] = useState(false);
-  const [introComplete, setIntroComplete] = useState(true);
-  const [videoIntro, setVideoIntroComplete] = useState(true);
+  // const [loading, setLoading] = useState(false);
+  // const [introComplete, setIntroComplete] = useState(true);
+  // const [videoIntro, setVideoIntroComplete] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
