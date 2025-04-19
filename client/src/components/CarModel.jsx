@@ -21,7 +21,7 @@ const modelMap = {
 
 
 
-const CarModel = ({ id, isInside }) => {
+const CarModel = ({ id, isInside, color }) => {
   const SelectedModel = modelMap[id] || BmwM5;
 
   const pointLightRef = useRef();
@@ -47,7 +47,7 @@ const CarModel = ({ id, isInside }) => {
   return (
     <a.group {...spring}>
       <CenterAndGround targetY={-1.05}>
-        <Suspense fallback={null}><SelectedModel /></Suspense>
+        <Suspense fallback={null}><SelectedModel color={color} /></Suspense>
         {isInside && (
           <>
             <pointLight

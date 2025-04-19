@@ -1,5 +1,5 @@
 // components/Experience.jsx
-import { OrbitControls, MeshReflectorMaterial, useHelper } from "@react-three/drei";
+import { OrbitControls, MeshReflectorMaterial, useHelper, Environment } from "@react-three/drei";
 import { useRef } from "react";
 import { DirectionalLightHelper, DoubleSide, PointLightHelper, SpotLightHelper } from "three";
 import CarModel from "./CarModel";
@@ -39,9 +39,9 @@ export default function Car3dStage({ carId, orbitRef }) {
         />
       </mesh> */}
 
-      <ambientLight intensity={0.4} />
+      {/* <ambientLight intensity={0.4} /> */}
 
-      <spotLight
+      {/* <spotLight
         // ref={spotRef}
         position={[0, 20, 0]}
         angle={0.3}
@@ -49,7 +49,7 @@ export default function Car3dStage({ carId, orbitRef }) {
         intensity={1000.5}
         castShadow
         shadow-mapSize={1024}
-      />
+      /> */}
       {/* <pointLight ref={pointRef} position={[0, 10, -2]} intensity={1} color="#ffffff" /> */}
 
       <directionalLight
@@ -80,7 +80,7 @@ export default function Car3dStage({ carId, orbitRef }) {
       />
 
       <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 2} ref={orbitRef} />
-      {/* <Environment preset="city" /> */}
+      {/* <Environment preset="studio" /> */}
     </>
   );
 }
