@@ -1,7 +1,10 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function RollsRoyceGhost(props) {
+export function RollsRoyceGhost({props, color = '#F2F2F2' }) {
+
+  let bodyColor = color  // soft off-white
+
   const { nodes, materials } = useGLTF('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/RollsRoyceGhost.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL1JvbGxzUm95Y2VHaG9zdC5nbGIiLCJpYXQiOjE3NDQzNzUxOTgsImV4cCI6MjA1OTczNTE5OH0.BWwKm6hNBcUKpB-KcI--3pHVRe9aONaO_144gvb9lU0')
   return (
     <group {...props} dispose={null} position={[0,-1,-0.5]} rotation={[0,-1,0]}>
@@ -247,7 +250,13 @@ export function RollsRoyceGhost(props) {
             castShadow
             receiveShadow
             geometry={nodes.rrghost_body_rrghost_paint_0.geometry}
-            material={materials['rrghost_paint.001']}
+            material={materials['rrghost_paint']}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -316,6 +325,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_bumper_F_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -502,6 +517,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_door_FL_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -564,6 +585,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_door_FR_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -632,6 +659,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_door_RL_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -700,6 +733,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_door_RR_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -810,6 +849,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_fender_L_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -854,6 +899,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_fender_R_b_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -1036,6 +1087,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_mirror_L_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
         </group>
         <group position={[-93.646, 106.234, 20.114]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -1044,6 +1101,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_mirror_R_mirror_0.geometry}
             material={materials.mirror}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -1056,6 +1119,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_mirror_R_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
         </group>
         <group position={[40.099, 68.925, -43.267]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
@@ -1376,6 +1445,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_trunk_b_rrghost_alcantara_0.geometry}
             material={materials.rrghost_alcantara}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -1400,6 +1475,12 @@ export function RollsRoyceGhost(props) {
             receiveShadow
             geometry={nodes.rrghost_trunk_b_rrghost_paint_0.geometry}
             material={materials.rrghost_paint}
+            onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
           />
           <mesh
             castShadow
@@ -1549,6 +1630,12 @@ export function RollsRoyceGhost(props) {
           position={[-2.928, 47.831, -292.993]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={100}
+          onBeforeRender={() => {
+                materials.rrghost_paint.color.set(bodyColor);
+                 // soft off-white
+                 materials.rrghost_paint.roughness = 0.1;
+                materials.rrghost_paint.metalness = 0.6;
+              }}
         />
         <mesh
           castShadow

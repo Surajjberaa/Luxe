@@ -21,12 +21,12 @@ const Studio = () => {
   const [isInterior, setIsInterior] = useState(true);
   const [isColored, setIsColored] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState();
 
   const interiorCars = ['rollsRoyce', 'porsche911', 'lamboHuracan', 'buggati'];
   const isInteriorCar = interiorCars.includes(carId);
 
-  const coloredCars = ['porsche911',];
+  const coloredCars = ['porsche911','rollsRoyce'];
   const isColoredCar = coloredCars.includes(carId);
 
   useEffect(() => {

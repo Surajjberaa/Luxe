@@ -4,7 +4,7 @@ import { color } from 'framer-motion';
 
 export function Porsche911({props, color}) {
 
-  const bodyColor = color; // soft off-white
+  let bodyColor = color ; // soft off-white
 
   const { nodes, materials } = useGLTF('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/porsche911Blender.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL3BvcnNjaGU5MTFCbGVuZGVyLmdsYiIsImlhdCI6MTc0NDc1MzQ4OCwiZXhwIjoyMDYwMTEzNDg4fQ.tp_ptMDg5Msc7cuzxiGTbuFufUHbWb7jJqcTrfzfv-s')
   return (
@@ -38,6 +38,7 @@ export function Porsche911({props, color}) {
               receiveShadow
               geometry={nodes.body__door_1_body_main_0.geometry}
               material={materials.body_main}
+              onrend
             />
             <mesh
               name="carbon__door_1_carbon_int_0"
