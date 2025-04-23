@@ -28,12 +28,22 @@ const CarsInfo = [
   },
   {
     id: 4,
+    title: 'Lamborghini Huracan',
+    imgUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1745408744/lamborghiniHuracan2_a2al6g.avif',
+    gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1745408786/lambohuracangif_qy6nrv.gif',
+    description: 'Futuristic design with unmatched power and performance.',
+    link: "/studio/lamboHuracan"
+  },
+  {
+    id: 5,
     title: 'Porsche 911 Turbo S',
     imgUrl: 'https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/images/Porsche%20911%20Turbo%20S.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvUG9yc2NoZSA5MTEgVHVyYm8gUy5qcGciLCJpYXQiOjE3NDQ3NTU3NjUsImV4cCI6MjA2MDExNTc2NX0.SjSJtOi48VYGFl4kd__BXQyRdUUSYoMq4TRl8j3moIY',
     gifUrl: 'https://res.cloudinary.com/dggyfyynb/image/upload/v1744755954/porsche911_dymjlx.gif',
-    description: 'Elegant, ultra-luxurious, smooth and powerful sedan.',
+    description: 'Iconic design, exhilarating speed, and precision engineering.',
     link: "/studio/porsche911"
   },
+  
+
   
 ]
 
