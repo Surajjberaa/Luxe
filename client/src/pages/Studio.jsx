@@ -10,23 +10,38 @@ import StudioLoader from "../components/studio/StudioLoader";
 import { useSpring } from "@react-spring/three";
 import * as THREE from "three";
 import gsap from "gsap";
+import { ColorPicker, useColor } from "react-color-palette";
+import { HexColorPicker } from "react-colorful";
 
 const Studio = () => {
-  const { carId } = useParams();
+  const { carId } = useParams();  
   const navigate = useNavigate();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isInside, setIsInside] = useState(false);
   const [isInterior, setIsInterior] = useState(true);
+  const [isColored, setIsColored] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
+  const [color, setColor] = useState();
 
   const interiorCars = ['rollsRoyce', 'porsche911', 'lamboHuracan', 'buggati'];
   const isInteriorCar = interiorCars.includes(carId);
+
+  const coloredCars = ['porsche911','rollsRoyce'];
+  const isColoredCar = coloredCars.includes(carId);
 
   useEffect(() => {
     if (isInteriorCar) {
       setIsInterior(true);
     } else {
       setIsInterior(false);
+    }
+  }, [carId]);
+
+  useEffect(() => {
+    if (isColoredCar) {
+      setIsColored(true);
+    } else {
+      setIsColored(false);
     }
   }, [carId]);
 
@@ -117,7 +132,7 @@ const Studio = () => {
         cameraRef.current = camera;
       }}>
         <Suspense fallback={<StudioLoader />}>
-          <CarModel id={carId} isInside={isInside} />
+          <CarModel id={carId} isInside={isInside} color={color} />
           <Car3dStage carId={carId} orbitRef={orbitRef} />
           <Garage />
         </Suspense>
@@ -193,6 +208,12 @@ const Studio = () => {
                   </button>
                 </div>
                 )
+              }
+
+              {
+                isColored && (<div className="flex gap-4 my-4">
+                  <HexColorPicker color={color} onChange={setColor} />
+                </div>)
               }
 
               <p className="text-sm text-white/50">Choose a car model:</p>

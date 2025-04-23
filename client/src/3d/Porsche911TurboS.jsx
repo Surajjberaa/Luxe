@@ -1,7 +1,11 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { color } from 'framer-motion';
 
-export function Porsche911(props) {
+export function Porsche911({props, color}) {
+
+  let bodyColor = color ; // soft off-white
+
   const { nodes, materials } = useGLTF('https://gaapupgzgvpsestztgyn.supabase.co/storage/v1/object/sign/car-models/porsche911Blender.glb?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXItbW9kZWxzL3BvcnNjaGU5MTFCbGVuZGVyLmdsYiIsImlhdCI6MTc0NDc1MzQ4OCwiZXhwIjoyMDYwMTEzNDg4fQ.tp_ptMDg5Msc7cuzxiGTbuFufUHbWb7jJqcTrfzfv-s')
   return (
       <group {...props} dispose={null} rotation={[0,3.8,0]} position={[0, -0.83, -0.5]}>
@@ -34,6 +38,7 @@ export function Porsche911(props) {
               receiveShadow
               geometry={nodes.body__door_1_body_main_0.geometry}
               material={materials.body_main}
+              onrend
             />
             <mesh
               name="carbon__door_1_carbon_int_0"
@@ -404,7 +409,7 @@ export function Porsche911(props) {
             material={materials.body_main}
             rotation={[-Math.PI / 2, 0, 0]}
             onBeforeRender={() => {
-                materials.body_main.color.set('#000000'); // soft off-white
+                materials.body_main.color.set(bodyColor); // soft off-white
                 materials.body_main.roughness = 0.5;
                 materials.body_main.metalness = 0.6;
               }}
