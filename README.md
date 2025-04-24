@@ -12,7 +12,6 @@
 - 🌗 Light & Dark theme toggle
 - 📱 Fully responsive design
 - 🔄 Smooth animated page transitions
-- 🧊 Glassmorphism and vibrant UI effects
 
 ## 🛠️ Built With
 
