@@ -10,12 +10,12 @@ function PinCards({ title, description, index, imgUrl, bgColor, specs }) {
         <div className="cardContent flex-1/4 md:flex-3/4">
           <h1 className='md:text-[4rem] text-[2rem] font-bold mb-[.5em] leading-tighter'>{title}</h1>
           <div className='flex flex-col '>
-            <p className='md:text-[1.7rem] text-[1rem] font-extralight opacity-50 font-[halimun]'>{description}</p>
+            <p className='md:text-[1.7rem] text-[1rem] font-extralight opacity-80 '>{description}</p>
             <div className={` backdrop-blur-md hidden md:block rounded-xl p-4  w-[80%] mt-10 hover:shadow-accent transition-shadow duration-500 ease-in-out
  `}>
               <div>
                 {/* <h2 className='text-4xl font-[halimun] mb-10 text-center'>Car Specs</h2> */}
-                <div className='grid grid-cols-3'>
+                <div className='grid grid-cols-3 mt-30'>
                   <h1 className='text-md font-extralight flex flex-col text-start mb-9 '><span className='opacity-50 font-[halimun]'>Engine  </span><span>{specs?.engine}</span></h1>
                   <h1 className='text-md font-extralight flex flex-col text-start mb-9 '><span className='opacity-50 font-[halimun]'>Horsepower  </span><span>{specs?.horsepower}</span></h1>
                   <h1 className='text-md font-extralight flex flex-col text-start mb-9 '><span className='opacity-50 font-[halimun]'>Top Speed </span><span>{specs?.topSpeed}</span></h1>
