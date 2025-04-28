@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import transition from '../components/motion/PageTransition'
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Environment, MeshReflectorMaterial, useHelper, useDetectGPU } from "@react-three/drei";
 import CarModel from "../components/CarModel";
@@ -259,4 +260,4 @@ const Studio = () => {
   );
 };
 
-export default Studio;
+export default transition(Studio);

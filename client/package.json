@@ -26,7 +26,7 @@
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
     "lucide-react": "^0.487.0",
-    "motion": "^12.6.3",
+    "motion": "^12.9.2",
     "postprocessing": "^6.37.2",
     "react": "^19.0.0",
     "react-color-palette": "^7.3.0",

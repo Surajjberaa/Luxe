@@ -1,4 +1,5 @@
 import { Cards } from '../components/aceternity/Cards'
+import transition from '../components/motion/PageTransition'
 import React from 'react'
 
 const CarsInfo = [
@@ -68,4 +69,4 @@ function Cars() {
   )
 }
 
-export default Cars
+export default transition(Cars)

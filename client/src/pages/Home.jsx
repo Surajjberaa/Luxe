@@ -1,4 +1,5 @@
 import gsap from "gsap"
+import transition from '../components/motion/PageTransition'
 import BentoSection from "../components/home/BentoSection"
 import HeroSection from "../components/home/HeroSection"
 import { ScrollTrigger } from "gsap/all";
@@ -41,4 +42,4 @@ function Home() {
     )
 }
 
-export default Home
+export default transition(Home)

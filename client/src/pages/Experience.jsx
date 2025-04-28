@@ -3,6 +3,7 @@ import { Buggati } from '../3d/Buggati'
 import { BmwM5 } from '../3d/BMW-M5'
 import Car3dExp from '../components/Car3dExp'
 import { useEffect, useRef, useState } from 'react'
+import transition from '../components/motion/PageTransition'
 import { Particles } from '../components/magicui/particles'
 import { useTheme } from '../contexts/ThemeContext'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -54,4 +55,4 @@ function Experience() {
   )
 }
 
-export default Experience
+export default transition(Experience)

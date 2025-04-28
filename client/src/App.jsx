@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react"
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Router, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
@@ -11,6 +11,7 @@ import { NumberTicker } from './components/magicui/number-ticker'
 import LuxeMoment from './components/LuxeMoment'
 import Studio from './pages/Studio'
 import LuxeVideo from "./components/LuxeIntroVideo"
+import { AnimatePresence } from "framer-motion"
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
   // const [loading, setLoading] = useState(false);
   // const [introComplete, setIntroComplete] = useState(true);
   // const [videoIntro, setVideoIntroComplete] = useState(true);
+
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,15 +52,15 @@ function App() {
      {!videoIntro ? <LuxeVideo onFinish={() => setVideoIntroComplete(true)} /> : !introComplete && <LuxeMoment onFinish={() => setIntroComplete(true)} />}
      { introComplete && 
     <MainLayout>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
+        <Route index path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/studio/:carId" element={<Studio />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      </AnimatePresence>
     </MainLayout>
     }
     <Analytics />

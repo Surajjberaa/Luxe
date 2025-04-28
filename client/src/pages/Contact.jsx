@@ -1,4 +1,5 @@
 import React from 'react'
+import transition from '../components/motion/PageTransition'
 
 function Contact() {
   return (
@@ -23,4 +24,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default transition(Contact)
