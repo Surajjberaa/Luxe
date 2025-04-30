@@ -39,7 +39,7 @@ export function Cards({imgUrl, gifUrl, title, description, link, props}) {
           </p>
           <div className="flex justify-center items-center">
 
-          <button className="rounded-full h-10 w-30 bg-gradient-to-r from-black to-gray-900 text-white text-center cursor-pointer border-2 border-gold-500 transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-90 shadow-lg hover:shadow-2xl " onClick={() => navigate(link)}>View 3D</button>
+          <button className="rounded-full h-10 w-30 bg-gradient-to-b from-black to-gray-900 text-white text-center cursor-pointer border-2 border-gold-500 transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-90 shadow-lg hover:shadow-2xl " onClick={() => navigate(link)}>View 3D</button>
           </div>
         </div>
       </div>
