@@ -30,7 +30,7 @@ function Navbar() {
                         <Link to='/experience'>Experience</Link>
                         <Link to='/studio/bmw'>Studio</Link>
                         <Link to='/contact'>Contact</Link>
-                        <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
+                        {/* <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button> */}
                     </div>
                     <div className='nav-right md:flex items-center justify-center text-lg hidden '>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +58,7 @@ function Navbar() {
                     <Link onClick={toggleMenu} to='/experience'>Experience</Link>
                     <Link onClick={toggleMenu} to='/studio/bmw'>Studio</Link>
                     <Link onClick={toggleMenu} to='/contact'>Contact</Link>
-                    <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button>
+                    {/* <button onClick={toggleTheme} className='ml-2'>{theme === 'light' ? '🌙' : '☀️'}</button> */}
                 </div>
 
             </div>
